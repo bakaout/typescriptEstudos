@@ -1,0 +1,96 @@
+//Union types &
+
+// type Primitives = string | number | boolean;
+
+// export function main(value:Primitives){
+   
+//     if (typeof value === 'string'){
+//        return 
+//     }
+//     value;
+//     if(typeof value === 'number'){
+//         return 
+//     }
+//     value;
+// }
+
+// enum TrafficLightType {
+//     Yellow,
+//     Red,
+//     Green
+// }
+
+// interface YelloColor {
+//     type: TrafficLightType.Yellow;
+//     wait(): void;
+// }
+
+// interface RedColor {
+//     type: TrafficLightType.Red;
+//     stop(): void;
+// }
+
+// interface GreenColor {
+//     type: TrafficLightType.Green
+//     drive(): void;
+// }
+
+// type TrafficLight = YelloColor | RedColor | GreenColor
+
+// const trafficLight: TrafficLight = {
+//     type: TrafficLightType.Yellow,
+//     wait() {
+        
+//     },
+// }
+
+
+// type ImageSize = 8 | 16 | 32 | 64 | 128 | 256 | 512 | 1024 | 2048
+
+// interface image {
+//     name: string;
+//     size: ImageSize
+// }
+
+// const imageSize: image = {
+//     name: 'Joka',
+//     size: 32
+// }
+
+// type Status = "notFoun" | 404 | "OK" | 200 | "forbiten";
+
+// function sendStatus(status: Status){
+
+// }
+
+// sendStatus("OK")
+
+
+// import {reaFile} from "fs/promises";
+
+// type JSONValue = string | number | boolean | JSONValue[] | {
+//     [key: string]: JSONValue
+// };
+
+// const jsonstring = await reaFile("data.json", "utf-8");
+// const json: JSONValue = JSON.parse(jsonstring);
+
+// if (typeof json === "string"){
+
+// }
+// if(Array.isArray(json)){
+//     json.forEach(value => {
+//         if (typeof value === "number"){
+//             value.
+//         }
+//     })
+// }
+
+type FindItemPredicate = (number) | ( (value: string, index: number) => boolean);
+function findItem(array:string[], predicate: FindItemPredicate){
+    if (typeof predicate === "number"){
+        return array[predicate]
+    }
+    return array.find(predicate)
+}
+findItem(["Joka", "Mimi", "Gra", "Lucca"], 1 /*(value) => value.startsWith("c")*/)

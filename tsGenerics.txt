@@ -1,0 +1,190 @@
+//Generics
+
+// function getFirstElement<T>(arr: T[]){//Com o ´T[] poemos receber qualquer tipo de array
+//     return arr[0]
+// }
+
+// const variados = [
+//     "Joka", "Mimi", "Gra", "Lucca", 
+//     30, 10,  5, 15,
+//     true, false, false, true]
+
+
+// const myvariados = getFirstElement(variados)
+
+
+// console.log(myvariados)
+
+
+// function isEqual<T, U>(a: T, b: U): boolean {
+//     //return a === b
+// }
+
+// console.log(isEqual(10, 10))//retorna true
+// console.log(isEqual("Joka", "Joka"))
+
+
+// interface ApiResponse<T>{
+//     data: T
+//     success: boolean;
+//     error?: string
+// }
+
+// interface User {
+//     id: string;
+//     name: string;
+//     role: string;
+// }
+
+// function fetchUser(): ApiResponse<User> {
+//     return {
+//         success:  true,
+//         data: {id: "123", name: "Joka", role: "Dev"},
+//         error: "404"
+//     }
+// }
+// const responsUser = fetchUser();
+
+
+// interface Book{
+//     id: number,
+//     title: string
+// }
+
+// function fetchBook(): ApiResponse<Book>{
+//     return{
+//         success: true,
+//         data: {id: 12, title: "banana de pijama"}
+//     }
+// }
+
+// const responseBook = fetchBook();
+
+// console.log(responseBook.data.title)
+
+
+
+// function fetchNumber(): ApiResponse<number>{
+//     return{
+//         success: true,
+//         data: 22
+//     }
+// }
+
+// const responseNumber = fetchNumber();
+
+// responseNumber.data.toFixed
+
+
+// class MyCustomArray<T> {
+//     private items: T[] = [];
+
+//     public add(item: T){
+//         this.items.unshift(item)
+//     }
+//     public remove(): T | undefined {
+//         return this.items.shift()
+//     }
+//     public isEmpty(): boolean {
+//         return this.items.length === 0
+//     }
+// }
+
+// const myCustomStringArr = new MyCustomArray<string>();
+
+
+
+// interface Player {
+//     name: string;
+//     health: number;
+//     shield: number;
+//     isDead: boolean;
+// }
+
+// const players = new MyCustomArray<Player>();
+
+// players.add({
+//     name:  "joka",
+//     health: 10,
+//     shield: 100,
+//     isDead: false,
+// })
+
+// const removedPlayer = players.remove()
+
+
+// if(removedPlayer){
+//     removedPlayer.isDead
+// }
+
+
+// function  logLength<T extends { length: number}>(item: T) {
+//     console.log(item.length)
+// }
+
+
+// const numbers = [1, 2 ,3]
+// const myObj = {length: 20}
+// const myName = "Joka"
+
+// const my = new Set<number>();
+
+
+// //A FUNÇÃO ACEITA QUALQUER TIPE QUE TIVER O METODO LENGTH
+// logLength(numbers)
+// logLength(myObj)
+// logLength(myName)
+
+
+
+// interface HasName {
+//     name:string;
+//     isProgrammer: boolean;
+// }
+
+// function greet<T  extends HasName>(obj: T){
+//     console.log(`Ola ${obj.name}`)
+// }
+
+// const player = {
+//     nick: "Joka"
+// }
+// const user = {
+//     name: "Joka"
+// }
+
+// greet(user)
+
+
+// function combine<T  extends number | string>(a: T, b: T): string{//tambem funciona com tipos primitivos
+//     return `${a}${b}`
+// }
+
+// combine(10,20)
+// combine("Joka","Dev")//O PRIMEIRO PARAMETRO É O QUE DEFINE O TIPO DDOS DOIS
+
+
+// class Animal {
+//     constructor(public name: string) {}
+// }
+
+// class Dog extends Animal {
+//     bark() {
+//         "Wooof"
+//     }
+// }
+
+// class Cat extends Animal{
+//     meow() {
+//         "meoow"
+//     }
+// }
+
+
+// function createInstance<T>(Class: new (name:string) => T, name: string){
+//     return new Class(name)
+// }
+
+// const newDog = createInstance(Dog, "joka")
+
+// newDog.bark

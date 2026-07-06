@@ -1,0 +1,41 @@
+//functons
+
+// type Args = string | number | boolean
+// function boostrap(dirname: string, args?: Args[]): boolean  /*vai retornar boolean*/{
+//     return true
+// }
+// boostrap("Emily",  [22, true, 'Joka']);
+
+// type Mainfunctiion =  (args: string[]) => void
+
+// const main:Mainfunctiion = (args) =>{
+
+// }
+
+// interface  Function {
+//     run(cootext: any): void;
+//     execute():boolean;
+//     handle(req: Request, res:Response): void;
+// }
+
+function OldcustomLog(text: string, color: string = "green", time?: Date, author?:  string){
+    console.log(color,  text)
+    if(time)  console.log("At:", time.toTimeString());
+    if(author) console.log("By: ", author);
+}
+OldcustomLog("Hello world", "green", new Date(), "Joka")
+
+interface CustomLogOptions {
+    color?: string,
+    time?: Date,
+    author?: string
+}
+
+function customLog(text: string, options: CustomLogOptions = {}){
+    const {color='green', author, time} = options;
+    console.log(color,  text);
+    if(time)  console.log("At:", time.toTimeString());
+    if(author) console.log("By: ", author);
+}
+
+customLog('Hello world', {time: new Date(),author: 'Joka'})

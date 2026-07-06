@@ -1,0 +1,56 @@
+//never
+
+// function throwError(message: string): never {
+//         throw new Error(message)
+// }
+
+// function main(){
+//     //throwError("Erro")//não vai executar nada a seguir, funciona como um 'return'
+//     try {
+//         throwError("Ocorreu  um erro")
+//     } catch(err){
+//         console.log(err)
+//     }
+
+//     const name = "joka";
+//     console.log(name)
+// }
+
+// main()
+
+
+// function main(x: string | number) {
+//     if(typeof x === "string"){
+//         x.concat()
+//     }
+//     if(typeof x === "number"){
+//         x.toFixed
+//     }
+//     x//Após as veriificações, o x resultara em NEVER
+// }
+
+
+
+// type IsString<T> = T extends string ? true : false
+// type IsNumber<T> = T extends number ? true : false
+
+// interface StringOptions {
+//     upper(): void;
+//     lower(): void;
+// }
+
+// interface NumberOptions {
+//     pow(exp: number): number;
+//     sub(b: number): number;
+//     sum(b: number): number;
+// }
+
+
+// type ManipuleOptions<T> = 
+//     IsString<T> extends true ? StringOptions :
+//     IsNumber<T> extends true ? NumberOptions :
+//     never;
+
+// const options: ManipuleOptions<string> = {
+
+// }

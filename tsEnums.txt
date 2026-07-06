@@ -1,0 +1,33 @@
+//Enums
+
+// enum ClothingSize {
+//     ExtraSmall = 'PP',
+//     Small = 'P',
+//     Medium = 'M',
+//     Large = 'G',
+//     ExtraLarge ='GG'
+// }
+
+// const cloth = {
+//     color: 'black',
+//     size: ClothingSize.Large
+// }
+
+enum ButtonStyle {
+    Green,
+    Blue,
+    Red,
+    Gray
+}
+interface Button {
+    label: String,
+    emoji: string,
+    style: ButtonStyle
+}
+
+const button: Button = {
+    label: 'Joka',
+    emoji: 'Feliz',
+    style: ButtonStyle.Green
+}
+

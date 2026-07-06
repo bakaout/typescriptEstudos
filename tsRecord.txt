@@ -1,0 +1,60 @@
+//Record
+
+// type Settings = Record<string, string>;//dois genericos <chave, valor>
+// const settings: Settings = {//se eu passar um valor, o  settings não vai aceitar, porque o tiipo generico foi declarado como string
+//     name: "Joka",
+//     type: "module",
+//     //version: 1
+// }
+// //utiil na padronização da variavel
+// settings.
+
+
+// type Offsets = Record<number, string>;
+
+// const offsets: Offsets = {
+//     0.4: "red",
+//     0.2: "green"
+//     //"hora": 12
+// }
+
+// interface Route{
+//     path: string;
+//     children?: Routes
+// } 
+
+// type Routes = Record<string, Route>
+
+// const Routes = {
+//     home: {
+//         path: "/home",
+//         children: {
+//             auth: {
+//                 path: "/menu"
+//             }
+//         }
+//     }
+// }
+
+
+// type dictionary = Record<string, number |  string | boolean>;
+
+// const dict: dictionary = {
+//     id: 10,
+//     name: "Joka",
+//     isProgrammer: true
+// }
+// if(typeof dict.id === "string"){
+//     dict.id.concat()
+// }
+
+// type Feature = "compileOnSave" | "autoSave" | "autoUpate"
+
+
+// type Features = Record<Feature, boolean>
+
+// const config:  Features = {
+//     autoSave: true,
+//     autoUpate: false,
+//     compileOnSave: true
+// }

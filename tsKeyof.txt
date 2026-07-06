@@ -1,0 +1,40 @@
+//keyof
+
+
+// interface Person {
+//     name: string;
+//     age: number;
+//     email: string;
+// }
+
+
+// type PersonKeys = keyof Person;
+
+// function modifyProp(prop: PersonKeys){
+
+// }
+
+// modifyProp("age")
+
+
+// function getProperty<T, K extends keyof T>(obj: T, key: K){
+
+// }
+
+// const person = {
+//     name: "joka",
+//     age: 22
+// }
+
+// const player = {
+//     nick: "baka",
+//     health: 100
+// }
+
+// const book = {
+//     title: "Little prince",
+//     author: "Antoine"
+// }
+
+
+// getProperty(person, "age")

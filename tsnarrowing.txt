@@ -1,0 +1,120 @@
+//Narrowing
+
+// function priintValue(value: string | number | boolean){
+//     if(typeof value === "string" || typeof value === "number"){//fazenddo uma verificação (typeguard)
+//         value
+//         return
+//     }
+//     value
+    
+// }
+
+
+// // COM CLASS USMOS 'INSTANCEOF' PARA VERIFICAÇÃO (TYPEGUARD)
+// class Dog {
+//     bark() {
+//         "Wooof"
+//     }
+// }
+
+// class Cat {
+//     meow() {
+//         "meoow"
+//     }
+// }
+
+// function makeSound(animal: Dog | Cat) {
+//     if(animal instanceof Dog){// COM CLASS USMOS 'INSTANCEOF' PARA VERIFICAÇÃO (TYPEGUARD)
+//         animal.bark()
+//         return
+//     }
+//     animal.meow()
+// }
+
+
+
+// interface Fish {
+//     swin: () => void;
+// }
+
+// interface Bird {
+//     fly: () => void;
+// }
+
+// function move(animal: Fish | Bird){
+//     if("swin" in animal){// COM INTERFACE USMOS 'IN' PARA VERIFICAÇÃO (TYPEGUARD)
+//         animal.swin()
+//         return
+//     }
+//     animal.fly()
+// } 
+
+
+
+
+// function main(value: string[] |  Date){
+//     if ("push" in value){//FUNCIONA TAMBER COM TIPOS PRIMITIVOS
+//         value.push()
+//         return
+//     }
+//     value.setHours(1)
+// }
+
+
+
+// function handle(value: string | undefined  | null){
+//     //outra versão parecida porem mais extensa:
+//     //if(value === null || value === undefined) return 
+//     if(!value) return
+//     value.toUpperCase()
+// }
+
+
+
+// interface User {
+//     id: string;
+//     name: string;
+//     nickname?: string;
+// }
+
+// function handle(user?:  User){
+//     if(!user) return
+//     user.id.includes
+//     user.name.indexOf
+
+//     if(!user.nickname) return //SE NICKNAME FOR UM VALOR FALSO RETORNE, SE NÃO, CONTINUE
+//     user.nickname.toUpperCase//NICKNAME COM TOTAL CERTEZA É TRUE
+// }
+
+// handle()
+
+
+
+
+
+interface Animal {
+    name: string;
+    age: number;
+    follow(): void
+}
+interface Human {
+    name: string;
+    age: number;
+    pets?: Animal[]
+}
+interface Post {
+    title: string;
+    author: Human;
+}
+
+function handle(value: Animal | Human | Post){
+    if("name" in value && "follow" in value){
+        value
+        return
+    }
+    if("title" in value){
+        value
+        return
+    }
+    value//Human
+}

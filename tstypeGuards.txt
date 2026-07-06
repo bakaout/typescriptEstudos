@@ -1,0 +1,166 @@
+// Type guards
+
+// function printValue(value: string | number) {
+//     if (typeof value === "string"){
+//         return value.toUpperCase()
+    
+//     }
+//     value.toFixed(2)
+// }
+
+// class Dog {
+//     bark() {
+//         'woof!'
+//     }
+// }
+
+// class Cat {
+//     meow() {
+//         'meow!'
+//     }
+// }
+
+// function makeSound(animal: Dog |  Cat){
+//     if(animal instanceof Dog){//se animal instancia da class Dog, animal vai ser do tipo dog
+//         animal.bark()
+//         return;
+//     }
+//     animal.meow()
+// }
+
+
+// interface Fish {
+//     swim: () => void;
+// }
+
+// interface Bird {
+//     fly: () => void;
+// }
+
+// function move(animal: Fish | Bird){
+//     if("swim" in animal){
+//         animal.swim()
+//         return;
+//     }
+//     animal.fly()
+// }
+
+// function main(value: string[] | Date) {
+//     if("push" in value) {
+//         value.push("joka")
+//         return;
+//     }
+//     value.getTime()
+// }
+
+
+
+// interface Chef {
+//     cook(): void;
+//     certificate: string;
+// }
+// interface Teacher {
+//     teach(): void;
+//     diploma: string;
+// }
+// interface Driver {
+//     drive(): void;
+//     license: string;
+// }
+
+// type Professionals = Chef | Teacher | Driver;
+
+// //typeguards aqui---------
+// function isChef(value: Professionals): value is Chef {//deve retornar um boolean
+//     return (value as Chef).cook !== undefined//verificando se o Value como um Chef possue o metodo .cook        
+// }
+// function isTeacher(value: Professionals): value is Teacher {//deve retornar um boolean
+//     return (value as Teacher).teach !== undefined//verificando se o Value como um Teacher possue o metodo .teach         
+// }
+// function isDriver(value: Professionals): value is Driver {//deve retornar um boolean
+//     return (value as Driver).drive !== undefined//verificando se o Value como um Driver possue o metodo .drive         
+// }
+// //---------
+
+// function execute(professional: Professionals) {
+//     if(isChef(professional)){
+//         professional.cook
+//         return
+//     }
+//     if(isTeacher(professional)){
+//         professional.teach
+//         return
+//     }
+//     professional.drive
+    
+// }
+
+// function execute2(professional: Professionals){
+//     switch(true){
+//         case isChef(professional): {
+//             professional.cook
+//             break;
+//         }
+//         case isTeacher(professional): {
+//             professional.teach()
+//             break;
+//         }
+//         case isDriver(professional): {
+//             professional.drive()
+//             break;
+//         }
+//     }
+// }
+
+
+// class Professionals {
+//     isChef(): this is Chef {
+//         //Se a classe isChef for instanciada pela Professionals,
+//         //então a classe Professionals vai ser do tipo Chef
+//         return this instanceof Chef;
+//     }
+//     isTeacher(): this is Teacher {
+//         return this instanceof Teacher
+//     }
+//     isDriver(): this is Driver {
+//         return this instanceof Driver
+//     }
+// }
+
+// class Chef extends Professionals {
+//     public cook(): void{}
+//     public certificate: string = "chefe chico"
+// }
+// class Teacher extends Professionals {
+//     public teach(): void{}
+//     public diploma: string = "Eu sou Joka"
+// }
+// class Driver extends Professionals {
+//     public drive(): void{}
+//     public license: string = "587912298"
+// }
+
+// function execute(professional: Professionals) {
+//     switch(true){
+//         case professional.isChef():{
+//             professional.cook()
+//             break;
+//         }
+//         case professional.isDriver():{
+//             professional.drive()
+//             break;
+//         }
+//         case professional.isTeacher():{
+//             professional.teach()
+//             break;
+//         }
+//     }
+// }
+
+
+// //type guard de array
+// function main(value: unknown){
+//     if(Array.isArray(value)){
+//         value.push(1)
+//     }
+// }

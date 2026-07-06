@@ -1,0 +1,48 @@
+// as const (parecido com readonly)
+
+// const colors = ["green", "brown", "gray", "yellow"] as const //com as const, vira uma tupla
+
+
+// colors.pop()//remove o ultimo item do array
+// colors.push("purple")//adiciona no final do array
+
+// const [green, ...others] = colors//desestruturação
+
+// const config = {
+//     version: 2,
+//     autoSave: true
+// } as const
+
+// config.version
+// config.autoSave
+
+
+// const directions = ["north", "south", "east", "west"] as const //virou uma tupla
+
+// type Direction = typeof directions[number]//union type com todos os elementos
+
+// function setStatus(status: "success" | "error" | "pending") {
+//     console.log(`Status: ${status}`)
+// }
+
+
+// let currentStatus = "success" as const //virou imutavel
+
+// setStatus(currentStatus)
+
+// const Action = {
+//     create: 1,
+//     update: 2,
+//     delete: 3
+// } as const
+
+// type ActionEnum = typeof Action
+// type Actions = keyof ActionEnum// pegando as chaves do tipo ActionEnum formamos um union type
+
+// function manage(action: Actions | ActionEnum[Actions]){
+//     if (typeof action === "string"){
+//         action.concat()
+//         return
+//     }
+//     action.toFixed();//number 1 | 2 | 3
+// }

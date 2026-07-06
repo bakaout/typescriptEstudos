@@ -1,0 +1,49 @@
+//Omit
+
+import { exec } from "node:child_process";
+
+// interface User {
+//     id: number;
+//     name: string;
+//     email: string;
+//     isAdmin: boolean;
+// }
+
+// type BasicUserInfo = Omit<User, "id" | "email">;
+
+// const user: BasicUserInfo = {
+//     name: "Joka",
+//     isAdmin: true
+// }
+
+
+// type DateProps = "getHours" | "getMinutes" | "getDay"
+// type DateTime = Omit<Date, DateProps>
+
+// function main(date: DateTime){
+//     date.//não tem "getHours" | "getMinutes" | "getDay", porque foi omitido
+// }
+
+
+// interface Player {
+//     nick: string;
+//     health: number;
+//     shield: number;
+//     inventory: string[];
+// }
+
+
+// const player: Player ={
+//     nick: "Joka",
+//     health: 100,
+//     shield: 100,
+//     inventory: ["potion", "sword"]
+// }
+
+// function execute<T, K extends keyof T>(obj: T, keys: K[]): Omit<T, K>{
+//     return Object.create({})
+// }
+
+
+// const NewPlayer = execute(player, ["inventory" ,"shield"])
+// NewPlayer.nick

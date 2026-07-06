@@ -1,0 +1,79 @@
+// interfaces
+
+/* 
+declare global {
+
+    interface Console {
+        sayHello(): void
+    }
+}
+
+
+Object.assign(console, {
+    sayHello(){
+        console.log("Hello")
+    }
+})
+
+console.sayHello()
+*/
+
+
+interface UserWallet {
+    coins?: number;
+    credits?: number;
+}
+
+interface User {
+    name: string,
+    createdAt: Date;
+    wallet?: UserWallet
+}
+
+interface User {
+    talk(): void
+}
+
+
+function createUser(name: string): User {
+    return { name, createdAt: new Date(),
+        talk() {
+            //console.log("Eu sou", name)
+        },
+    }
+}
+
+function updateWallet(user: User, wallet: UserWallet){
+    user.wallet = { ...user.wallet, ...wallet}
+}
+
+ const Joka = createUser('Joka');
+
+ Joka.talk()
+
+ updateWallet(Joka, {credits: 10})
+
+interface Admin extends User{
+   ban(user: User): void;
+   kick(user: User): void;
+}
+
+function promoteUser(user: User): Admin {
+    return {
+        ...user,
+        ban(userToban) {
+            console.log(userToban, "foi banido por", this.name)
+        },
+        kick(userTokick) {
+            console.log(userTokick, "foi kickado por", this.name)
+        },
+    }
+}
+
+const AdminJoka = promoteUser(Joka)
+
+function adminAction(admin: Admin){
+
+}
+
+adminAction(AdminJoka)

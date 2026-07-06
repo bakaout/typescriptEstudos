@@ -1,0 +1,16 @@
+//Tuplas
+
+type NameList = String[]
+
+type CalendarDate = [day: number, month: number, year: number]//ISSO É TUPLA
+
+const list: NameList = []
+list.push("Joka")
+
+const date: CalendarDate = [30, 11, 2026]
+
+function createDate(date: CalendarDate){
+    const[day, month, year] = date;
+}
+
+createDate(date)

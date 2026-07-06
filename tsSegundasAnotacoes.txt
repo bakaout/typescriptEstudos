@@ -1,0 +1,71 @@
+// types
+
+/*
+type Input = string | number;
+
+function prompt(input: Input){
+
+}
+
+prompt(10) */
+
+// interface Dog {
+//     name: string,
+//     breed: string,
+//     bark(): string;
+// }
+
+// interface Cat {
+//     name: string;
+//     color: string;
+//     meow(): string;
+// }
+
+// interface Bird {
+//     name: string;
+//     wingspan: number;
+//     chirp(): string;
+// }
+
+// interface Cow {
+//     name: string;
+//     weight: number;
+//     moo(): string;
+// }
+
+// type Animal = Dog | Cat | Bird | Cow;
+
+// function createAnimal(animal: Animal) {
+
+// }
+
+// createAnimal({
+//     name: 'Mia',
+//     color: 'black',
+//     meow() {
+//         return "miauu"
+//     },
+// })
+
+type Userwallet = {
+    coins?: number;
+    credit?: number;
+}
+
+type User = {
+    name: string;
+    createdAt: Date;
+    wallet?: Userwallet;
+}
+
+//COM TYPE NÃO É POSSIVEL USAR O EXTENDS, PARA ACRESCENTAR ALGUM OUTRO TYPE
+//É PRECISO FAZER UMA INTERCEÇÃO DE TYPES USANDO O '&'
+type Admin = User & {
+    ban(user: User): void;
+    kick(user: User): void
+}
+
+const admin: Admin = {
+
+}
+

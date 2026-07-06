@@ -1,0 +1,49 @@
+//required
+
+// interface User {
+//     id?: string;
+//     name?: string;
+//     email?: string;
+//     isAdmin?: boolean;
+// }
+
+// type  RequiredUser  = Required<User>//transforma tudo em obrigatorio
+
+
+
+// const user:RequiredUser = {
+//     name:"Joka",
+//     id:"um",
+//     email: "baka@gmail.com",
+//     isAdmin: true
+// }
+
+
+// interface Player {
+//     nick?: string;
+//     health?: number;
+//     shield?: number;
+//     inventory?: string[];
+// }
+
+// const player: Required<Player> = {
+//     nick: " Joka",
+//     health: 100,
+//     shield: 100,
+//     inventory: ["A", "b"]
+// }
+
+// //este type tem a função de deixar  apenas body e method obrigatorios, porem ainda mostrando os outros metodos do Requestinit como opicionais
+// type MyFetchOptions =
+// Required<Pick<RequestInit, "body" | "method">>
+// & Omit<RequestInit, "body" | "method">
+
+
+// function myFetch(url: string, options?: MyFetchOptions) {
+
+// }
+
+// myFetch("http://localhost:8080/auth",  {
+//     body: "dsd",
+//     method: "fdf"
+// })

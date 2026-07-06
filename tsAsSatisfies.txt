@@ -1,0 +1,44 @@
+//anotation, as e satisfies
+
+// interface FooterData {
+//     text: string, iconURL?: string
+// }
+
+// type Footer = string | FooterData
+
+// const footerA: Footer = {
+//     text: "Admin"
+// }
+// const footerB: Footer = {
+//     text: "Admin"
+// } as Footer
+// const footerC: Footer = {
+//     text: "Admin"
+// } satisfies Footer
+
+// footerA.iconURL
+
+// footerB.toString
+
+// type  Cooldowns = Record<string, number>;
+
+// const cooldowns = {
+//     joka: 100,
+//     galo: 80,
+//     aleff: 50
+// } satisfies Cooldowns
+
+// //sem o satisfies não conseguimos acessar nenhuma propriedade
+// cooldowns.joka
+
+
+// type Properties = { filePath: string, private?: boolean}
+// type Commands = Record<string, Properties>
+
+// const commands = {
+//     ping: {
+//         filePath: "/commands/pings.ts",
+//         private: false,
+//         name: "ping",
+//     }
+// }as Commands;

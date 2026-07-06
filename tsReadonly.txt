@@ -1,0 +1,73 @@
+//readonly (apenas leitura)
+
+// interface User {
+//     readonly id: string;
+//     name: string;
+//     age: number;
+// }
+
+
+// const user: User = {
+//     id: "11987301857",
+//     name: "Joka",
+//     age: 22
+// }
+
+// user.name = "MIMI"
+
+// user.id = "123"
+
+
+// class Command {
+//     public readonly createdAt: Date;
+//     public name: string;
+//     constructor(name: string){
+//         this.name = name;
+//         this.createdAt = new Date()
+//     }
+//     public run(){
+//         this.name = "outro nome";
+//         this.createdAt = new Date()
+//     }
+// }
+
+
+// const command = new Command("ping")
+
+// command.createdAt//imutavel
+
+
+// interface Player {
+//     readonly nick: string;
+//     health: number;
+//     shield: number;
+//     invetory: string[]
+// }
+// // //uma versão imutavel
+// // type StaticPlayer = Readonly<Player>
+
+// // function play(player: StaticPlayer){
+// //     player.health    
+// // }
+
+// const player: Player = {
+//     nick: "Joka",
+//     health: 100,
+//     shield: 100,
+//     invetory: ["sword", "gun", "water"],
+// }
+
+// function freeze<T extends object>(obj: T): Readonly<T>{
+//     return Object.freeze(obj)
+// }
+
+// const staticPlayer = freeze(player)
+
+
+// import packageJson from "../package.json";
+
+// type StaticPackageJson = Readonly<typeof packageJson>
+
+// function main(packageJson: StaticPackageJson) {
+//     packageJson.name = ""
+// }
