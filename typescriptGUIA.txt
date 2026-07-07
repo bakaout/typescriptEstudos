@@ -18,7 +18,7 @@ A Tupla é basicamente uma caixa que vai ter determinados itens em posições
 'type CalendarDate = [day: number, month: number, year: number]'
 
 Enums (enumrações)
-Uma maneira e definir um conjunto de valores nomeados.
+Uma maneira de definir um conjunto de valores nomeados.
 Os Enums deixam o código mais legivel
 
 Type intersections &
@@ -107,7 +107,22 @@ propriedade opicionais viram obrigatorias
 
 Exclude
 é usado para remover um tipo de uma  união de tipos
-é util  quando queremos excluir uma uniãode tipos para criar outra união de tipos
+é util  quando queremos excluir uma união de tipos para criar outra união de tipos
+
+
+NonNullLable
+Muito util para criar novas tipagens a partir de uma determinada tipagem que pode ser nulla ou indefinida
+garante que a tipagem não tenhha null ou indefinido
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,8 +1,6 @@
-//Exclude
+////exclude
+// type Primitive = string | number | boolean
 
-// type Primitive = string | number | boolean;
-
-// //criando um novo type a partir do type Pimitive e  excluindo um dos valores dele
 // type Value = Exclude<Primitive, boolean>
 
 // enum Colors {
@@ -13,22 +11,22 @@
 //     Green = "#008000"
 // }
 
+// type warmColor = Exclude<Colors, Colors.Blue | Colors.Green>
 
-// type WarmColors =  Exclude<Colors, Colors.Blue | Colors.Green>
-// type CooldColors = Exclude<Colors, WarmColors>
+// type cooldColor = Exclude<Colors, warmColor>
 
-// interface Message<T>{
+// interface Message<T> {
 //     type: T
-//     content: string;
-//     color: T extends "warm" ? WarmColors : CooldColors
+//     content: string,
+//     color: T extends "warm" ? warmColor : cooldColor
 // }
-
-// function createMessage<T extends "warm" | "coold">(options: Message<T>) {
+// //restringindo tipo generico da função para apenas warm ou cold
+// function createMessage<T extends "warm" | "coold">(options: Message<T>){
 
 // }
 
 // createMessage({
-//     type: "coold",//funciona como um interruptor
-//     content: "Titulo 1",
+//     type: "coold",
+//     content: "Ola, mundo",
 //     color: Colors.Blue
 // })
