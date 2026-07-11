@@ -115,6 +115,10 @@ Muito util para criar novas tipagens a partir de uma determinada tipagem que pod
 garante que a tipagem não tenhha null ou indefinido
 
 
+Extract
+É muito util quando a gente quer filtrar um tipo complexo pra selecionar apenas os tipos que contem a descrição que passamos como segundo generico
+
+
 
 
 
