@@ -1,0 +1,59 @@
+//infer
+
+// type ArrayType<Arr> = 
+//     Arr extends string[] ? string : //o argumento  generico é um array de string? se sim, manter como string, se não, retornar never
+//     Arr extends number[] ? number : never;//fazendo mais uma verificação, mas se for fazer verificação para tdos os tipos, vai virar uma bagunça e é por isso que vamos usar o infer, para inferir o tipo do array e retornar ele
+
+// const names = ['Alice', 'Bob', 'Charlie']
+// const numbers = [1, 2, 3]
+// const myarr1 = [...names, ...numbers]
+// const myarr = ["Joka", true, 28, "matheus", null, 40, false, 92, -20]
+
+
+// type MyType = ArrayType<typeof myarr1>//o typeof vai pegar o tipo do array, e o ArrayType vai verificar se é um array de string ou number, e retornar o tipo correspondente
+
+
+type ArrayType<Arr> = 
+    Arr extends Array<infer U> ? U : never //
+
+const names = ['Alice', 'Bob', 'Charlie']
+const numbers = [1, 2, 3]
+const myarr1 = [...names, ...numbers]
+const myarr = ["Joka", true, 28, "matheus", null, 40, false, 92, -20]
+
+//dessa vez pegando tdos os tipos do array sem precisar fazer verificação para cada tipo, o infer vai inferir o tipo do array e retornar ele
+type MyType = ArrayType<typeof myarr>
+//--------------------------------------------------------------------
+
+function customLog(color: 'red' | 'green', content: string) {}
+function mtFetch(url: string, options: RequestInit) {}
+function createUser(name: string, age: number, isProgrammer: boolean) {}
+function pow(value: number){}
+
+type GetSecndParam<F> = 
+F extends (p1: any, p2: infer Param, ...args: any[]) => any ? Param : never//o infer vai inferir o tipo do segundo parametro da função, e retornar ele, se não for uma função, vai retornar never 
+
+type funcParam2 = GetSecndParam<typeof createUser>
+//--------------------------------------------------------------------
+
+type GetParameters<F> =
+F extends (...args: infer Args) => any ? Args : never;
+
+type FuncParams = GetParameters<typeof createUser>//agora o resultado virou uma tupla, com todos os parametros da função, e não apenas o segundo parametro, como no exemplo anterior
+//--------------------------------------------------------------------
+
+const placeholders = [
+    "variable(title)",
+    "var(member)",
+    "Joka",
+    "var(username)",
+    "VAR(createdAt)",
+    "var(timestamp)"
+] as const//array virou imutavel
+
+type Arr = typeof placeholders
+
+type GetVarName<T extends string> =
+T extends `var(${infer VarName})` ? VarName : never//o infer vai inferir o nome da variavel dentro do template literal, e retornar ele, se não for uma variavel, vai retornar never
+
+type VarName = GetVarName<Arr[5]>

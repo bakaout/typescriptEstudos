@@ -121,8 +121,10 @@ Extract
 Mapped types
 os mapped types são uma forma de modificar tipos de objetos só que percorrendo suas propriedades e aplicando uma operação qualquer a cada uma delas
 
-
-
+Infer
+pode ser muito confuso, mas com a pratica pode ser muito util
+O Infer no ts é utilizado dentro de tipagens condicionais, é usado para fazer inferencias de tipo de uma forma avançada
+Ele é usado para extrair um determinaddo tipo de outro, atraves de uma condição
 
 
 
