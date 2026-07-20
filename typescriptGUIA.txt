@@ -66,8 +66,8 @@ Ex: dados vindos de API já validados
 Ou algo que o TS não consegue inferir
 
 Keyof
-keyof ? pega as chaves de um tipo ({ string1: "string1", string2: "string2"})
-Resultado ? union de strings ( string1 | string2)
+keyof ? pega as chaves de um tipo ({ string1: "cocacola", string2: "pepsi"})
+Resultado ? union de strings ( cocacola | pepsi)
 Usado pra:
 evitar erros
 acessar propriedades com segurança
@@ -118,7 +118,8 @@ garante que a tipagem não tenhha null ou indefinido
 Extract
 É muito util quando a gente quer filtrar um tipo complexo pra selecionar apenas os tipos que contem a descrição que passamos como segundo generico
 
-
+Mapped types
+os mapped types são uma forma de modificar tipos de objetos só que percorrendo suas propriedades e aplicando uma operação qualquer a cada uma delas
 
 
 

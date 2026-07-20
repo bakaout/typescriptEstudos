@@ -1,0 +1,60 @@
+interface User {
+    id: string;
+    name: string;
+    age?: number;
+    email: string;
+    isAdmin: boolean;
+    send(): string;
+    join(): string;
+    isActive(): boolean;
+}
+
+//percorre todas as propriedades e transforma elas em opicionais
+type  MyPartial<T> = {
+    [Key in keyof T]?: T[Key];
+}
+
+//percorre todas as propriedades e ttranforma em obrigatórias
+type MyRequired<T> = {
+    [Key in keyof T]-?: T[Key];
+}
+
+//todas propriedades de User são opicionais
+type PartialUser = MyPartial<User>;
+
+
+//todas propriedades de User são obrigatorias 
+type PartialRequest = MyRequired<User>
+//-----------------------------------------------------------------
+
+type toBooleanRecord<T> = {
+    [Key in keyof T]: boolean;
+}
+
+//todas proppriedades tiveram o valor transformado para boolean
+type MyUser = toBooleanRecord<User>
+//-----------------------------------------------------------------
+
+type UnderscoreProps<T> = {
+    //Key extends string ? significa: essa chave é uma string?
+    [Key in keyof T as Key extends string ? `joka${Key}` : Key]: T[Key];
+}
+
+type UnderscoreUser = UnderscoreProps<User>
+//-----------------------------------------------------------------
+
+type  NoMethod<T> = {
+    [Key in keyof T as T[Key] extends Function ? never : Key]: T[Key]
+}
+
+//não prossui as propriedades que são metodos
+type NoMethodUser = NoMethod<User>
+//-----------------------------------------------------------------
+
+type RemovePropType<T, U> = {
+    [Key in keyof T as T[Key] extends U ? never : Key]: T[Key]
+}
+
+//remove qualquer propriedade que seja do tipo U, nesse caso string
+//uma forma mais dinamica de remover propriedades de um tipo, sem precisar criar um novo tipo para cada propriedade que deseja remover
+type MyUserAnyProps = RemovePropType<User, string>
