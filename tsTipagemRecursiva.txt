@@ -1,0 +1,57 @@
+// Tipagem recursiva
+
+type JSONValue = string | number | boolean | JSONValue[] | {
+    [key: string]: JSONValue
+}
+
+const json: JSONValue = [true, " 1", 1, {
+    name: "joka",
+    bolsa: {
+        tamanho: 2,
+        cor: "azul"
+    }
+}]
+
+
+
+// type PackageJson = typeof import("../package.json")
+
+// type PartialPackageJson = Partial<PackageJson>
+
+// const pkg: PartialPackageJson = {
+//     name: "my-package",
+//     type: "1.0.0",
+//     scripts: {
+
+//     }
+// }
+
+//RESOLVENDO O PROBLEMA DAS SUBPROPRIEDADES NÃO SEREM OPCIONAIS
+type PackageJson = typeof import("../package.json")
+
+type NestedPartial<T> = {
+    //todas as chaves opicionais:? TK é um objeto? Sim (recursividade) : Não (normal)
+    [K in keyof T]?: T[K] extends object ? NestedPartial<T[K]> : T[K]
+}
+
+type NestedRequired<T> = {
+    //todas as chaves requeridas:? TK é um objeto? Sim (recursividade) : Não (normal)
+    [K in keyof T]-?: T[K] extends object ? NestedRequired<T[K]> : T[K]
+}
+
+type NestedReadOnly<T> = {
+    //todas as chaves readonly:? TK é um objeto? Sim (recursividade) : Não (normal)
+    readonly [K in keyof T]-?: T[K] extends object ? NestedReadOnly<T[K]> : T[K]
+}
+
+type packageJson = NestedPartial   <PackageJson>
+
+const pkg: packageJson = {
+    name: "my-package",
+    type: "1.0.0",
+    //virou opicional
+    scripts: {
+
+    }
+}
+
