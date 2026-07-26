@@ -131,6 +131,9 @@ Quando chamamos uma tipagem dentro dela mesma e quando uma tipagem retorna a si 
 As tipagens recursivas em TypeScript servem para definir estruturas de dados aninhadas e auto-referenciais, permitindo que um tipo faça referência a si mesmo em suas propriedades ou valores
 
 
+Modulos em ts
+Usam a sintaxe descrita no package json (ES6), usando o import e export
+
 
 
 
