@@ -55,3 +55,29 @@ const pkg: packageJson = {
     }
 }
 
+const names = "Joka, Lucca, Graziella, Giovanni"
+
+const arrnames = names.split(",")
+
+type Split<S extends string, T> =
+//verificando se o primeiro parametro extende(contem) o seguinte padrão
+T extends `${infer Splited}${S}${infer Rest}` ?
+//se conter, o Splited vira a primeira string da lista "joka", e chama a tipagem recursiva para realizar a mesma verificação até acabar o array
+Splited | Split<S, Rest> :
+// se não, ele simplismente acaba
+never
+
+type Names = Split<",", typeof names>
+
+
+//------------------------------------------
+//tipagem que contem do express
+
+type GetParams<T extends string> = 
+    T extends `${string}:${infer Param}/${infer Rest}`
+    ? Param | GetParams<Rest>
+    : T extends `${string}:${infer Param}`
+        ? Param
+        : never
+
+type Params = GetParams<"/users/:userId/post/:postId">

@@ -126,6 +126,9 @@ pode ser muito confuso, mas com a pratica pode ser muito util
 O Infer no ts é utilizado dentro de tipagens condicionais, é usado para fazer inferencias de tipo de uma forma avançada
 Ele é usado para extrair um determinaddo tipo de outro, atraves de uma condição
 
+tipagem Recursiva
+Quando chamamos uma tipagem dentro dela mesma e quando uma tipagem retorna a si mesma
+As tipagens recursivas em TypeScript servem para definir estruturas de dados aninhadas e auto-referenciais, permitindo que um tipo faça referência a si mesmo em suas propriedades ou valores
 
 
 
