@@ -1,0 +1,33 @@
+//decalre e .d.ts
+
+//declarando que no global existe algo (basicamente implementtando algo no global do projeto)
+// declare global {
+//     const joka: string
+// }
+// //agora joka em mettodos string
+// //joka.
+
+// Object.assign(globalThis, {
+//     joka: "Joka"
+// })
+
+// console.log(joka)
+
+interface UserData {
+    id: number;
+    name: string;
+    age: number
+}
+
+class User {
+    declare id: number;
+    declare name: string;
+    declare age: number
+        constructor(data: UserData){
+            Object.assign(this, data)
+        }
+}
+
+const user = new User({id: 1, name: "dois",age:  3})
+user.name
+

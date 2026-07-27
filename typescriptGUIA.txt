@@ -135,6 +135,13 @@ Modulos em ts
 Usam a sintaxe descrita no package json (ES6), usando o import e export
 
 
+Declare
+É usado para falar para o compilador que alguma coisa existe, porem a implementação de fato esta definida em outro lugar
+
+.d.ts
+Arquivos .d.ts: Contêm apenas definições de tipos (interfaces, enums, assinaturas de funções) e não geram código JavaScript; são essenciais para integrar código JS legado ou bibliotecas de terceiros com tipagem estática. 
+
+
 
 
 
