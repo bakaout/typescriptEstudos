@@ -142,6 +142,8 @@ Declare
 Arquivos .d.ts: Contêm apenas definições de tipos (interfaces, enums, assinaturas de funções) e não geram código JavaScript; são essenciais para integrar código JS legado ou bibliotecas de terceiros com tipagem estática. 
 
 
+import alias
+Os path aliases são configurados no arquivo tsconfig.json para simplificar caminhos relativos longos.  Isso requer a definição de baseUrl e paths nas opções do compilador
 
 
 
